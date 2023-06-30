@@ -16,6 +16,7 @@
         update todo_items set
          title = #{title},
          time_limit = to_date(#{time_limit},'yy-mm-dd')
+         done_flg = #{done_flg}
          where id = #{id}
     </update>
 </mapper>
