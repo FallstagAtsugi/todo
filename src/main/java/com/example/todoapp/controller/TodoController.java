@@ -17,8 +17,12 @@ public class TodoController {
 
     @RequestMapping(value = "/")
     public String index(Model model){
-        List<Todo> list = todoMapper.selectAll();
+//        List<Todo> list = todoMapper.selectAll();
+        List<Todo> list = todoMapper.selectIncomplete();
+        List<Todo> doneList = todoMapper.selectComplete();
         model.addAttribute("todos", list);
+        model.addAttribute("doneTodos",doneList);
+
         return "index";
     }
 
