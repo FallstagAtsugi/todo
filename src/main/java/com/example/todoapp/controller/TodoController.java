@@ -38,4 +38,9 @@ public class TodoController {
         return "redirect:/";
     }
 
+    @RequestMapping(value = "/delete")
+    public String delete(){
+        todoMapper.delete();
+        return "redirect:/";
+    }
 }
